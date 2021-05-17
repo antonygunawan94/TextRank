@@ -1,9 +1,9 @@
 package textrank
 
 import (
-	"github.com/DavidBelicza/TextRank/convert"
-	"github.com/DavidBelicza/TextRank/parse"
-	"github.com/DavidBelicza/TextRank/rank"
+	"github.com/antonygunawan94/TextRank/convert"
+	"github.com/antonygunawan94/TextRank/parse"
+	"github.com/antonygunawan94/TextRank/rank"
 )
 
 // TextRank structure contains the Rank data object. This structure is a wrapper

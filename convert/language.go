@@ -33,6 +33,19 @@ func NewLanguage() *LanguageDefault {
 	return lang
 }
 
+func NewIndonesianLanguage() *LanguageDefault {
+	lang := &LanguageDefault{
+		"id",
+		make(map[string][]string),
+	}
+
+	words := getDefaultIndonesian()
+
+	lang.SetWords("id", words)
+
+	return lang
+}
+
 // IsStopWord method retrieves true when the given word is in the stop word
 // list or when the word has less character then 2.
 func (lang *LanguageDefault) IsStopWord(word string) bool {
