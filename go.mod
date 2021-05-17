@@ -1,4 +1,4 @@
-module github.com/DavidBelicza/TextRank
+module github.com/antonygunawan94/TextRank
 
 go 1.15
 
