@@ -1,6 +1,7 @@
 package parse
 
 import (
+	"regexp"
 	"strings"
 )
 
@@ -11,6 +12,8 @@ func TokenizeText(rawText string, rule Rule) Text {
 }
 
 func findSentences(rawText string, rule Rule) Text {
+	wordReg, _ := regexp.Compile("\\w")
+
 	text := Text{}
 
 	var sentence string
@@ -21,9 +24,10 @@ func findSentences(rawText string, rule Rule) Text {
 		j += len(string(chr))
 		//when separator or the last
 		if rule.IsSentenceSeparator(chr) || j == slen {
-			//when the next char is not a space continue
+			//when the next char is a word continue
 			if j < slen-1 {
-				if string(rawText[j+1]) != " " {
+				nextChar := string(rawText[j+1])
+				if wordReg.MatchString(nextChar) {
 					continue
 				}
 			}
