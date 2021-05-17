@@ -22,12 +22,12 @@ func findSentences(rawText string, rule Rule) Text {
 		//when separator or the last
 		if rule.IsSentenceSeparator(chr) || j == slen {
 			//when the next char is not a space continue
-			if j != slen - 1 {
-				if string(rawText[j+1]) != " "{
-					continue	
+			if j < slen-1 {
+				if string(rawText[j+1]) != " " {
+					continue
 				}
 			}
-			
+
 			sentence = rawText[i:j]
 			if len(sentence) > 0 {
 				text.Append(sentence, findWords(sentence, rule))

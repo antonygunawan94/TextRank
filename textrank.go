@@ -39,6 +39,10 @@ func NewDefaultLanguage() *convert.LanguageDefault {
 	return convert.NewLanguage()
 }
 
+func NewIndonesianLanguage() *convert.LanguageDefault {
+	return convert.NewIndonesianLanguage()
+}
+
 // NewDefaultAlgorithm function retrieves an Algorithm object. It defines how
 // should work the text ranking algorithm, the weighting. This is the general
 // text rank by weighting the connection between the words to find the strongest
