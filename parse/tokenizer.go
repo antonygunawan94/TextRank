@@ -12,7 +12,7 @@ func TokenizeText(rawText string, rule Rule) Text {
 }
 
 func findSentences(rawText string, rule Rule) Text {
-	wordReg, _ := regexp.Compile("\\w")
+	wordReg, _ := regexp.Compile("[a-z0-9]")
 
 	text := Text{}
 
@@ -26,7 +26,7 @@ func findSentences(rawText string, rule Rule) Text {
 		if rule.IsSentenceSeparator(chr) || j == slen {
 			//when the next char is a word continue
 			if j < slen-1 {
-				nextChar := string(rawText[j+1])
+				nextChar := string(rawText[j])
 				if wordReg.MatchString(nextChar) {
 					continue
 				}
